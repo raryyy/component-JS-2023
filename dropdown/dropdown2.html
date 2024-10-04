@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .navbar {
+        background: orange;
+      }
+      .navbar ul {
+        list-style: none;
+        padding: 0;
+      }
+      .navbar > ul {
+        display: flex;
+        justify-content: space-around;
+      }
+      .navbar a {
+        display: block;
+        padding: 1em;
+      }
+
+      .navbar li {
+        position: relative;
+      }
+      .dropdown-target {
+        position: absolute;
+        top: 3em;
+        left: 1em;
+        background: red;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 300ms;
+      }
+      .active {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Lien 1</a></li>
+        <li><a href="#">Lien 2</a></li>
+        <li>
+          <a href="#" class="dropdown-trigger">Dropdown 1</a>
+          <ul class="dropdown-target">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="dropdown-trigger">Dropdown 2</a>
+          <ul class="dropdown-target">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      document.querySelectorAll(".dropdown-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", function (e) {
+          e.stopPropagation();
+          this.closest("li")
+            .querySelector(".dropdown-target")
+            .classList.toggle("active");
+        });
+      });
+
+      document.addEventListener("click", function () {
+        //supprimer tout les menus quand je clique sur le document
+      });
+    </script>
+  </body>
+</html>

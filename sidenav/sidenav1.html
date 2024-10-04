@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideNav</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding-left: calc(200px + 1em);
+      }
+      .sidenav {
+        background: orange;
+        padding: 1em;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -200px;
+        transition: all 300ms;
+      }
+      .active {
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidenav">
+      <ul>
+        <li><a href="#">Lien 1</a></li>
+        <li><a href="#">Lien 2</a></li>
+        <li><a href="#">Lien 3</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Sidenav</h1>
+      <div><a href="#" id="hop">hop</a></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
+        vitae porro sunt dignissimos, voluptates amet maxime in suscipit atque
+        soluta veritatis eligendi beatae aut magni mollitia fugiat molestias ea
+        pariatur!
+      </p>
+      <p>
+        Qui eos aliquam eum, est ad rem autem consectetur sapiente ipsa
+        doloribus, maxime, amet quae in ullam aliquid ratione aspernatur atque
+        voluptate. Consequatur cum praesentium beatae placeat eveniet molestiae
+        impedit.
+      </p>
+      <p>
+        Eligendi unde sit eaque commodi voluptate ipsam, sint illum assumenda
+        iure consequuntur qui dignissimos iste laborum voluptatibus officia,
+        maiores expedita nesciunt, nam quod adipisci quos doloribus eos.
+        Ducimus, ratione quos!
+      </p>
+      <p>
+        Impedit sapiente ducimus fugit molestiae. Praesentium quos nisi
+        voluptate tempore? Quibusdam facere enim, sapiente ad corrupti sint
+        ullam ex in nostrum reiciendis dolores quia dolorem neque, quisquam
+        facilis soluta numquam?
+      </p>
+      <p>
+        Animi dignissimos omnis soluta voluptates autem laborum reprehenderit
+        rerum cum, amet placeat pariatur doloribus voluptatem doloremque ut sunt
+        obcaecati quas cumque, earum commodi tempora minus, dolorem eligendi
+        sequi. Quos, accusamus?
+      </p>
+
+      <script>
+        document.getElementById("hop").addEventListener("click", function () {
+          document.querySelector(".sidenav").classList.toggle("active");
+        });
+      </script>
+    </main>
+  </body>
+</html>
